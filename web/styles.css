@@ -1,0 +1,77 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+body {
+    background-image: url(Assets/Images/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.input{
+    background-color: #F2F2F2;
+    border-style: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 90%;
+    margin-left: 5%;
+    text-indent: 20px;
+}
+
+.btn{
+    width: 90%;
+    padding: 10px;
+    border: none;
+    background: #1c87c9; 
+    border-radius: 7px;
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 5%;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.input:focus {
+    border: 2px solid rgba(28, 135, 201, 0.5); 
+    outline: none; 
+}
+
+.mensaje{
+    font-weight: 400;
+    text-align: center;
+}
+
+.contenedor {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    margin: -25px 0 0 -25px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: 10px;
+    width: 350px; 
+    height: 500px;
+    border-radius: 20px; 
+    padding: 20px;
+    color: #D0D0D0;
+    box-shadow: 6px 10px 29px 0px rgba(0,0,0,0.61);
+}
+
+@media screen and (max-width: 768px) {
+    * {
+      font-size: 16px; 
+    }
+    .contenedor{
+        left: 12%;
+    }
+  }
