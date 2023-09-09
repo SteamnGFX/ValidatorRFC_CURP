@@ -1,6 +1,9 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -8,11 +11,40 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.contenedor {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #D0D0D0;
+    width: 350px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: 10px;
+    -webkit-backdrop-filter: 10px;
+    -moz-backdrop-filter: 10px;
+    box-shadow: 6px 10px 29px 0px rgba(0,0,0,0.61);
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
 }
 
 h1{
     font-weight: 700;
-    font-size: 1em;
+    font-size: 2em;
+    text-align: center;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.contForm div{
+    margin-bottom: 25px;
 }
 
 .input{
@@ -20,51 +52,17 @@ h1{
     border-style: none;
     border-radius: 10px;
     height: 40px;
-    width: 90%;
-    margin-left: 5%;
-    text-indent: 20px;
-}
-
-.btn{
-    width: 90%;
-    padding: 10px;
-    border: none;
-    background: #1c87c9; 
-    border-radius: 7px;
-    margin-top: 2%;
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    margin-left: 5%;
+    width: 100%;
+    text-indent: 10px;
 }
 
 .input::placeholder{
-    color: black;
+    color: rgb(73, 72, 72);
 }
 
 .input:focus {
     border: 2px solid rgba(28, 135, 201, 0.5); 
     outline: none; 
-}
-
-.mensaje{
-    font-weight: 400;
-    text-align: center;
-}
-
-.contenedor {
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    margin: -25px 0 0 -25px;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: 10px;
-    width: 350px; 
-    height: 500px;
-    border-radius: 20px; 
-    padding: 20px;
-    color: #D0D0D0;
-    box-shadow: 6px 10px 29px 0px rgba(0,0,0,0.61);
 }
 
 @media screen and (max-width: 768px) {
@@ -75,3 +73,42 @@ h1{
         left: 12%;
     }
   }
+
+
+
+
+
+.btnContent{
+    display: flex;
+    gap: 5px;
+}
+
+.btn{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #1c87c9; 
+    border-radius: 7px;
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.btn:nth-child(2){
+    background: #6ac91c; 
+}
+
+
+
+
+
+.mensaje{
+    font-weight: 400;
+    text-align: center;
+}
+
+body{
+    
+}
+
