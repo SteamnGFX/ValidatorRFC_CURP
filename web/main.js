@@ -84,26 +84,31 @@ if (!/^[0-9]+$/.test(fechaCaracteres)) {
         mensaje('El identificador de estado en la CURP no es válido.');
         return;
     }
+    
+// Verificar que los dígitos de la fecha sean válidos (caracteres 5 al 10)
+let fechaNacimientoStr = curp.substr(4, 6);
+let anio = parseInt(fechaNacimientoStr.substr(0, 2), 10); // Los primeros dos dígitos son el año
+let mes = parseInt(fechaNacimientoStr.substr(2, 2), 10); // Los siguientes dos dígitos son el mes
+let dia = parseInt(fechaNacimientoStr.substr(4, 2), 10); // Los últimos dos dígitos son el día
 
-    // Verificar que los dígitos de la fecha sean válidos (caracteres 5 al 10)
-    let fechaNacimientoStr = curp.substr(4, 6);
-    let anio = parseInt(fechaNacimientoStr.substr(0, 2), 10); // Los primeros dos dígitos son el año
-    let mes = parseInt(fechaNacimientoStr.substr(2, 2), 10); // Los siguientes dos dígitos son el mes
-    let dia = parseInt(fechaNacimientoStr.substr(4, 2), 10); // Los últimos dos dígitos son el día
+if (isNaN(anio) || isNaN(mes) || isNaN(dia) || mes < 1 || mes > 12 || dia < 1 || dia > 31) {
+    mensaje('La fecha de nacimiento en la CURP no es válida.');
+    return;
+}
 
-    if (isNaN(anio) || isNaN(mes) || isNaN(dia) || mes < 1 || mes > 12 || dia < 1 || dia > 31) {
-        mensaje('La fecha de nacimiento en la CURP no es válida.');
-        return;
-    }
+// Obtener el año actual
+let fechaActual = new Date();
+let anioActual = fechaActual.getFullYear() % 100; // Obtener los dos últimos dígitos del año actual
 
-    // Obtener el año actual
-    let fechaActual = new Date();
-    let anioActual = fechaActual.getFullYear();
+// Ajustar el año de nacimiento si es mayor que el año actual
+if (anio > anioActual) {
+    anio -= 100;
+}
 
-    // Calcular la edad
-    let edad = anioActual - (2000 + anio); // Suponiendo que el año de nacimiento esté en formato de dos dígitos
+// Calcular la edad
+let edad = anioActual - anio;
 
-    mensaje('CURP Válida <br>Sexo: ' + sexoTexto + '<br>Estado: ' + estadoNombre + '<br>Edad: ' + edad + ' años');
+    mensaje('<label style="color: green; font-weight: 600;">CURP Válida</label> <br>Sexo: ' + sexoTexto + '<br>Estado: ' + estadoNombre + '<br>Edad: ' + edad + ' años');
 }
 
 // Función para validar el RFC
@@ -123,10 +128,10 @@ function validarRFC() {
     }
 
     if (curp === rfcCortado){
-        mensaje('RFC válido.');
+            mensaje('<label style="color: green; font-weight: 600;">RFC Válido</label>');
 
     } else {
-        mensaje('El RFC No coincide')
+        mensaje('El RFC No coincide');
     }
 
 }
