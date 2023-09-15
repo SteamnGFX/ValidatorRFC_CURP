@@ -12,12 +12,29 @@
         <h1>VALIDADOR DE RFC Y CURP</h1>
         <div class="contForm">
             <div>
+
+                <div class="utilierias">
+                    <button type="button" id="btnErrorCURP">Ver Errores</button>
+                    <button type="button" id="btnInfoCURP">Ver Info</button>
+                </div>
+
                 <label for="txtCURP">CURP</label>
-                <input id="txtCURP" class="input" type="text" max="12" required placeholder="Ingresa un CURP">
+                <input id="txtCURP" class="input" type="text" maxlength="18" required placeholder="Ingresa la CURP">
+
+                <div id="msgCURP" class="msg"></div>
+
             </div> 
             <div>
+                <div class="utilierias">
+                    <button type="button" id="btnErrorRFC">Ver Errores</button>
+                    <button type="button" id="btnInfoRFC">Ver Info</button>
+                </div>
+
                 <label for="">RFC</label>
-                <input id="txtRFC" class="input" type="text" max="12" required placeholder="Ingresa un RFC">
+                <input id="txtRFC" class="input" type="text" maxlength="13" required placeholder="Ingresa el RFC">
+                
+                <div id="msgRFC" class="msg"></div>
+
             </div>
 
             <div class="btnContent">
@@ -26,12 +43,21 @@
             </div>
         </div>
 
-        <div>
-            <p id="mensaje" class="mensaje"></p>
-            <p id="edad" class="mensaje"></p>
+        <div id="msgIgual">
+
         </div>
-        
     </div>
+
+    <div id="contInfo">
+        <div class="info">
+            <span id="close">X</span>
+            <div id="infoCURP"></div>
+            <div id="infoRFC"></div>
+            <div id="errCURP"></div>
+            <div id="errRFC"></div>
+        </div>
+    </div>
+
     <script src="main.js" type="text/javascript"></script>
 </body>
 </html>
